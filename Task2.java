@@ -5,24 +5,28 @@ public class Task2 {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Введите 1 число: ");
-        int num1 = in.nextInt();
+        float num1 = in.nextInt();
         System.out.print("Введите 2 число: ");
-        int num2 = in.nextInt();
+        float num2 = in.nextInt();
         in.close();
 
         try {
-            checkNum(num2);
+            checkNum(num1, num2);
         } catch (MyExeption ex) {
             System.out.println("Ошибка! " + ex.getMessage());
-        } finally {
-            if (num2 != 0)
-                System.out.printf("%d / %d = " + num1/num2, num1, num2);
-        }
+        } 
+        
     }
 
-    public static void checkNum(int num) throws MyExeption {
-        if (num == 0)
+    public static void checkNum(float num1, float num2) throws MyExeption {
+        
+        if (num2 == 0)
             throw new MyExeption("Деление на ноль недопустимо");
+        else{
+          float result = 0;
+          result = num1/num2;
+          System.out.println(result);          
+        }  
     }
 }
 

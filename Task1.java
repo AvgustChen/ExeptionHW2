@@ -12,15 +12,13 @@ public class Task1 {
             checkNum(num);
         } catch (MyExeption ex) {
             System.out.println("Ошибка! " + ex.getMessage());
-        } finally {
-            if (num > 0)
-                System.out.println("Число коректно!");
-        }
+        } 
     }
 
     public static void checkNum(int num) throws MyExeption {
         if (num <= 0)
             throw new MyExeption("Некоректное число!");
+        else System.out.println("Число коректно!");
     }
 }
 
